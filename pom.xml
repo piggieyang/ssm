@@ -169,9 +169,9 @@
 					<destFile>target/coverage-reports/jacoco-unit.exec</destFile>
 					<!--Jacoco是根据.exec文件生成最终的报告，所以需指定.exec的存放路径-->
 					<dataFile>target/coverage-reports/jacoco-unit1.exec</dataFile>
-<!--					<start>df93bd4bf255bf5cad4a12a0bbda9ae862c90f04</start>-->
-<!--					<end>c3ef9ec9d3cd16dc90399152a8557ec51c794f67</end>-->
-<!--					<vcs>git</vcs>-->
+					<start>df93bd4bf255bf5cad4a12a0bbda9ae862c90f04</start>
+					<end>c3ef9ec9d3cd16dc90399152a8557ec51c794f67</end>
+					<vcs>git</vcs>
 					<address>http://127.0.0.1:8081/ssm_war/jacoco.exec</address>
 				</configuration>
 				<executions>
