@@ -110,5 +110,24 @@ public class BookController {
 		}
 		return new Result<AppointExecution>(true, execution);
 	}
+	@RequestMapping(value = "/{bookId}/appoint4", method = RequestMethod.POST, produces = {
+			"application/json; charset=utf-8" })
+	@ResponseBody
+	private Result<AppointExecution> appoint4(@PathVariable("bookId") Long bookId, @RequestParam("studentId") Long studentId) {
+		if (studentId == null || studentId.equals("")) {
+			return new Result<>(false, "学号不能为空");
+		}
+		AppointExecution execution = null;
+		try {
+			execution = bookService.appoint(bookId, studentId);
+		} catch (NoNumberException e1) {
+			execution = new AppointExecution(bookId, AppointStateEnum.NO_NUMBER);
+		} catch (RepeatAppointException e2) {
+			execution = new AppointExecution(bookId, AppointStateEnum.REPEAT_APPOINT);
+		} catch (Exception e) {
+			execution = new AppointExecution(bookId, AppointStateEnum.INNER_ERROR);
+		}
+		return new Result<AppointExecution>(true, execution);
+	}
 
 }
