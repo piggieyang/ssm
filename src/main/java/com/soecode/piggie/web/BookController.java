@@ -90,6 +90,7 @@ public class BookController {
 		}
 		return new Result<AppointExecution>(true, execution);
 	}
+
 	@RequestMapping(value = "/{bookId}/appoint3", method = RequestMethod.POST, produces = {
 			"application/json; charset=utf-8" })
 	@ResponseBody
